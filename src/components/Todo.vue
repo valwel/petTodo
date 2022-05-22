@@ -1,6 +1,8 @@
 <template>
   <div class="main">
+    <div class="header">Введите новую задачу:</div>
     <input v-model="newTodoText" @keypress.enter="onAddTodo" type="text">
+    <div class="header">Ваши задачи:</div>
     <ul class="todo">
       <li v-for="item in todoList" :key="item.id" @click="onToggleDone(item)">
         <button @click="deleteTodo(item)">Удалить</button>
@@ -40,15 +42,20 @@ export default {
 }
 </script>
 
-
 <style scoped>
 .todo{
   font-size: 32px;
   list-style-type: none;
 }
 
-.main {
-  position: absolute;
-  margin: 300px;
+.header{
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 20px;
+}
+
+button{
+  margin-right: 10px;
 }
 </style>
